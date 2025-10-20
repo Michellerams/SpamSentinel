@@ -1,0 +1,9 @@
+{
+  "name": "Spam Sentinel AI",
+  "description": "An AI-powered email analyzer that detects spam, phishing attempts, and malicious content. Paste in an email to get a detailed analysis of potential red flags.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ]
+}

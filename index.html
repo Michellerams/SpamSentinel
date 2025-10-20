@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spam Sentinel AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes animatedGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animated-gradient-bg {
+        background: linear-gradient(-45deg, #1d2b64, #3b2b6b, #244e75, #2c768a);
+        background-size: 400% 400%;
+        animation: animatedGradient 15s ease infinite;
+      }
+      @keyframes slideInDown {
+        from { transform: translateY(-100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slideInDown {
+        animation: slideInDown 0.7s ease-out forwards;
+      }
+      @keyframes fadeInUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.7s ease-out 0.3s forwards;
+        opacity: 0;
+      }
+      @keyframes flipIn {
+        from {
+          transform: perspective(1000px) rotateX(-90deg);
+          opacity: 0;
+        }
+        to {
+          transform: perspective(1000px) rotateX(0deg);
+          opacity: 1;
+        }
+      }
+      .animate-flipIn {
+        animation: flipIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        transform-origin: top center;
+        opacity: 0;
+      }
+      
+      .card-3d-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .group:hover .card-3d-effect {
+        transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) scale(1.03);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+       @keyframes scanLine {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+      .scan-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(to bottom, rgba(100, 180, 255, 0), rgba(100, 180, 255, 0.3), rgba(100, 180, 255, 0));
+        animation: scanLine 2s ease-in-out infinite;
+      }
+
+      /* New Welcome Screen Animations */
+      @keyframes fadeInScaleUp {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .animate-fadeInScaleUp {
+        animation: fadeInScaleUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      }
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      .animate-fadeOut {
+        animation: fadeOut 0.6s ease-in 2s forwards;
+      }
+
+      /* Interactive Guide Styles */
+      .guide-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(2px);
+        z-index: 40;
+      }
+      .guide-highlight {
+        position: relative;
+        z-index: 50;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.8), 0 0 15px 5px rgba(59, 130, 246, 0.4);
+        border-radius: 0.5rem; /* Corresponds to rounded-lg */
+        transition: box-shadow 0.3s ease-in-out;
+        background-color: #0f172a; /* bg-slate-900 for solid background */
+      }
+      .guide-box {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1e293b; /* slate-800 */
+        color: #cbd5e1; /* slate-300 */
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        border: 1px solid #334155; /* slate-700 */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        z-index: 50;
+        width: 90%;
+        max-width: 500px;
+        opacity: 0; /* Handled by animation */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="animated-gradient-bg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
