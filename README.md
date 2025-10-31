@@ -2,6 +2,7 @@
 
 **Spam Sentinel AI** is a next-generation spam and phishing detection assistant powered by the **Google Gemini API**.  
 It analyzes suspicious content, generates intelligent summaries, and even provides real-time speech feedback — all with a focus on **speed**, **accuracy**, and **data privacy**.
+
 ![Uploading Spam.png…]()
 
 ---
